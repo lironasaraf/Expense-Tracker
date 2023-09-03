@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct AddExpenseView: View {
+    
+    @Environment(\.managedObjectContext) var manageObjectContext
     
     @State private var name = ""
     @State private var amount = ""
@@ -17,6 +20,7 @@ struct AddExpenseView: View {
     
     var body: some View {
         NavigationView {
+           
             VStack(spacing: 20){
                 TextField("Name of Expense", text: $name)
                     .padding()
@@ -75,7 +79,23 @@ struct AddExpenseView: View {
                 }
                 
                 Button{
-                    //
+                    let expense = Expense1(context: manageObjectContext)
+                    expense.amount = Double(amount) ?? 0
+                    expense.date = Date()
+                    expense.id = UUID()
+                    expense.name = name
+                    expense.type = selectedCategory
+                    
+                    do {
+                        try manageObjectContext.save()
+                        print("Data saved successfully")
+                        
+                    } catch {
+                        let nsError = error as NSError
+                        fatalError("Unresolved error\(nsError)")
+                        
+                    }
+                    isExpenseAdded = true
                     
                 }label: {
                     Text("Add Expense")
@@ -92,6 +112,17 @@ struct AddExpenseView: View {
             }
             .padding(.horizontal)
             .navigationTitle("Add Expense")
+            .alert("Expense Added", isPresented: $isExpenseAdded) {
+                Button{
+                    isExpenseAdded = false
+                    name = ""
+                    amount = ""
+                    selectedCategory = nil
+                }label:{
+                    Text("OK")
+
+                }
+            }
 //            .preferredColorScheme(.dark)
         }
     }
