@@ -42,9 +42,53 @@ struct AddExpenseView: View {
                             selectedCategory = category
                         } label: {
                             Text(category)
+                                .foregroundColor(selectedCategory == category ? .white : .black)
+                                .bold()
+                                .frame(maxWidth: .infinity, minHeight: 50)
+                                .background(selectedCategory == category ? .blue : .white)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
                         }
+                        
                     }
                 }
+                LazyVGrid(columns: [
+                    GridItem(.flexible(),spacing: 16),
+                    GridItem(.flexible(),spacing: 16)
+                    
+                ], spacing: 16){
+                    ForEach(catagories[3...4], id: \.self) {
+                        category in
+                        Button {
+                            selectedCategory = category
+                        } label: {
+                            Text(category)
+                                .foregroundColor(selectedCategory == category ? .white : .black)
+                                .bold()
+                                .frame(maxWidth: .infinity, minHeight: 50)
+                                .background(selectedCategory == category ? .blue : .white)
+                                .cornerRadius(10)
+                                .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                        }
+                        
+                    }
+                }
+                
+                Button{
+                    //
+                    
+                }label: {
+                    Text("Add Expense")
+                        .foregroundColor(.white)
+                        .bold()
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(.blue)
+                        .cornerRadius(10)
+                        .shadow(color: .gray, radius: 2, x: 0, y: 2)
+                    
+                }
+                .padding()
+                Spacer()
             }
             .padding(.horizontal)
             .navigationTitle("Add Expense")

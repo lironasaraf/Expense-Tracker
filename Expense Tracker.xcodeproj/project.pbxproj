@@ -18,6 +18,8 @@
 		8CCCDD722A9CD9BE00464A1B /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCDD712A9CD9BE00464A1B /* AddExpenseView.swift */; };
 		8CCCDD742A9CDA9600464A1B /* EditExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCDD732A9CDA9600464A1B /* EditExpenseView.swift */; };
 		8CCCDD762A9CDADF00464A1B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCDD752A9CDADF00464A1B /* SettingsView.swift */; };
+		8CCCDD8E2AA48B8200464A1B /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCDD8C2AA48B8200464A1B /* ExpenseTracker.xcdatamodeld */; };
+		8CCCDD902AA48C5000464A1B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCCDD8F2AA48C5000464A1B /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		8CCCDD712A9CD9BE00464A1B /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		8CCCDD732A9CDA9600464A1B /* EditExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseView.swift; sourceTree = "<group>"; };
 		8CCCDD752A9CDADF00464A1B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		8CCCDD8D2AA48B8200464A1B /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
+		8CCCDD8F2AA48C5000464A1B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,8 @@
 		8CCCDD6E2A9CD8C300464A1B /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				8CCCDD8F2AA48C5000464A1B /* DataController.swift */,
+				8CCCDD8C2AA48B8200464A1B /* ExpenseTracker.xcdatamodeld */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -298,7 +304,9 @@
 				8CCCDD432A9CD81F00464A1B /* Expense_TrackerApp.swift in Sources */,
 				8CCCDD762A9CDADF00464A1B /* SettingsView.swift in Sources */,
 				8CCCDD702A9CD96400464A1B /* ExpenseView.swift in Sources */,
+				8CCCDD902AA48C5000464A1B /* DataController.swift in Sources */,
 				8CCCDD722A9CD9BE00464A1B /* AddExpenseView.swift in Sources */,
+				8CCCDD8E2AA48B8200464A1B /* ExpenseTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +631,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8CCCDD8C2AA48B8200464A1B /* ExpenseTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8CCCDD8D2AA48B8200464A1B /* ExpenseTracker.xcdatamodel */,
+			);
+			currentVersion = 8CCCDD8D2AA48B8200464A1B /* ExpenseTracker.xcdatamodel */;
+			path = ExpenseTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8CCCDD372A9CD81F00464A1B /* Project object */;
 }
