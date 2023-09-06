@@ -9,12 +9,19 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView{
+            ExpenseView()
+                .tabItem {
+                    Image(systemName: "dollarsign")
+                    Text("Expense")
+                }
+            AddExpenseView()
+                .tabItem {
+                    Image(systemName: "plus")
+                    Text("Add Expense")
+                }
         }
+
         .padding()
     }
 }

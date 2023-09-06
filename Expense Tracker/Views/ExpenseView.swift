@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct ExpenseView: View {
+    
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)])
+    var expense:FetchedResults<Expense1>
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                ScrollView(.vertical, showsIndicators: true) {
+                    HStack{
+                        Text("Welcome")
+                            .font(.title)
+                        Spacer()
+                    }
+                    ForEach(expense) { expense in
+                        ExpenseDetail(amount: String(expense.amount), date: expense.date!, name: expense.name!, type: expense.type ?? "Transportation")
+                        
+                    }
+                }
+            }
+            .padding()
+            .navigationTitle("Expenses")
+        }
     }
 }
 
