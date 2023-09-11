@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+
 struct Expense_TrackerApp: App {
     @StateObject private var dataController = DataController()
     
